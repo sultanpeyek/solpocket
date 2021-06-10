@@ -8,7 +8,7 @@ import DataService from "../services/DataService";
 import styles from "../styles/Home.module.css";
 import { formatAmount } from "../utils/utils";
 
-export default function Wallet({ publicKey, tokens }) {
+export default function Wallet({ publicKey: any, tokens: any }) {
   console.log(tokens);
   return (
     <div className={styles.container}>
