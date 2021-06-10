@@ -8,7 +8,7 @@ import DataService from "../services/DataService";
 import styles from "../styles/Home.module.css";
 import { formatAmount } from "../utils/utils";
 
-export default function Wallet({ publicKey: any, tokens: any }) {
+export default function Wallet({ publicKey, tokens }: any) {
   console.log(tokens);
   return (
     <div className={styles.container}>
@@ -20,7 +20,7 @@ export default function Wallet({ publicKey: any, tokens: any }) {
       <main className={styles.main}>
         <p>{publicKey}</p>
         <ul>
-          {tokens.map((token, key) => (
+          {tokens.map((token: any, key: any) => (
             <li key={key}>{formatAmount(token.account.data.parsed.info.tokenAmount.uiAmountString, 4)}</li>
           ))}
         </ul>
@@ -31,7 +31,7 @@ export default function Wallet({ publicKey: any, tokens: any }) {
   );
 }
 
-Wallet.getInitialProps = async (ctx) => {
+Wallet.getInitialProps = async (ctx: any) => {
   // Establish connection
   let connection: Connection;
   const rpcUrl = "https://api.mainnet-beta.solana.com";
